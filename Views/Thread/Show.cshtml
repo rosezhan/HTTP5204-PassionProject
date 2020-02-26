@@ -1,0 +1,13 @@
+﻿@model WritingForum.Models.Thread
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h1>THREADS</h1>
+<div>THREAD: @Model.Title</div>
+<div>
+    @Model.Author.Username
+    @Model.Date
+</div>
+

@@ -1,0 +1,18 @@
+﻿@model List<WritingForum.Models.Thread>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h1>THREADS</h1>
+
+@{
+    foreach (var Thread in Model)
+    {
+        <div>
+            <a href="/Thread/Show/@Thread.ThreadID">@Thread.Title</a>
+            @Thread.Author.Username
+            @Thread.Date
+        </div>
+    }
+}
