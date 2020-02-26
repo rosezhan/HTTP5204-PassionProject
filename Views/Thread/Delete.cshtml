@@ -1,0 +1,13 @@
+﻿@model WritingForum.Models.Thread
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h1>Please confirm:</h1>
+<p>Are you sure you want to delete: THREAD @Model.Title</p>
+<form method="post" action="/Thread/Delete/@Model.ThreadID">
+    <button type="submit">Confirm</button>
+</form>
+<div>
+    <button type="submit" value="/Thread/Show/@Model.ThreadID">Cancel</button>
+</div>

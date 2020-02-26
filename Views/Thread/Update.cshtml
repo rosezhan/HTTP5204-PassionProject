@@ -1,0 +1,44 @@
+﻿@model WritingForum.Models.UpdateThread
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h1>EDIT THREAD</h1>
+<a href="/Thread/List">Back to List</a>
+<form action="/Thread/Update/@Model.Thread.ThreadID" method="post">
+    <div>
+        <label for="threadName">Title:</label>
+        <input type="text" id="threadName" name="threadName" value="@Model.Thread.Title" />
+    </div>
+    <div>
+        <label for="threadAuthor">Author:</label>
+        <select id="threadAuthor" name="threadAuthor">
+            @foreach (var authors in Model.Author)
+            {
+                var selected = "";
+                if (Model.Thread.AuthorID == authors.AuthorID)
+                {
+                    selected = "selected";
+                }
+                <option value="@authors.AuthorID" @selected>@authors.Username</option>
+            }
+        </select>
+    </div>
+    <!-- status has set values and doesn't need to be dynamic -->
+    <div>
+        <label for="threadStatus">Status:</label>
+        <select name="threadStatus" id="threadStatus">
+            <option value="open">OPEN</option>
+            <option value="hidden">HIDDEN</option>
+            <option value="private">PRIVATE</option>
+            <option value="unavailable">UNAVAILABLE</option>
+            <option value="closed">CLOSED</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Update</button>
+        <button type="submit" value="/Thread/Delete/">Delete</button>
+    </div>
+</form>
+

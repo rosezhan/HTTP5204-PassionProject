@@ -245,6 +245,7 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\DbContext.cs" />
     <Compile Include="Models\Thread.cs" />
+    <Compile Include="Models\ViewModels\UpdateThread.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -386,6 +387,9 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Thread\List.cshtml" />
     <Content Include="Views\Thread\Show.cshtml" />
+    <Content Include="Views\Thread\New.cshtml" />
+    <Content Include="Views\Thread\Update.cshtml" />
+    <Content Include="Views\Thread\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

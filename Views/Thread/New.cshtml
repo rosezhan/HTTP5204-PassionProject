@@ -1,0 +1,29 @@
+﻿@model List<WritingForum.Models.Author>
+
+@{
+    ViewBag.Title = "New";
+}
+
+<h1>New Thread</h1>
+<div class="navBar">
+    <a href="/Thread/List" class="backLink">Back to List</a>
+</div>
+<form method="post" action="/Thread/Add">
+    <div>
+        <label for="threadTitle">Title:</label>
+        <input type="text" name="threadTitle" id="threadTitle" />
+    </div>
+    <div>
+        <span>Author:</span>
+        <select id="authorList" type="text" name="authorList">
+            @{
+                //insert list of authors
+                foreach (var author in Model)
+                {
+                    <option value="@author.AuthorID">@author.Username</option>
+                }
+            }
+        </select>
+    </div>
+</form>
+
