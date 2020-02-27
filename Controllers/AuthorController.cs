@@ -28,5 +28,20 @@ namespace WritingForum.Controllers
             }
             return View(Author);
         }
+
+        [HttpPost]
+        public ActionResult Add(string Username, string Email, string FirstName, string LastName)
+        {
+            string query = "insert into authors (Username, Email, FirstName, LastName) values (@AuthorUser, @AuthorEmail, @AuthorFName, @AuthorLName)";
+            SqlParameter[] sqlParams = new SqlParameter[4];
+            sqlParams[0] = new SqlParameter("@AuthorUser", Username);
+            sqlParams[1] = new SqlParameter("@AuthorEmail", Email);
+            sqlParams[2] = new SqlParameter("@AuthorFName", FirstName);
+            sqlParams[3] = new SqlParameter("@AuthorLName", LastName);
+
+            db.Database.ExecuteSqlCommand(query, sqlParams);
+
+            return RedirectToAction("List");
+        }
     }
 }

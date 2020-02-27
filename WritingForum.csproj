@@ -392,6 +392,7 @@
     <Content Include="Views\Thread\Update.cshtml" />
     <Content Include="Views\Thread\Delete.cshtml" />
     <Content Include="Views\Author\Profile.cshtml" />
+    <Content Include="Views\Author\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
