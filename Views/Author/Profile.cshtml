@@ -1,0 +1,27 @@
+﻿@model WritingForum.Models.Author
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h1>AUTHOR PROFILE:@Model.Username</h1>
+<div>About: @Model.About</div>
+<div>Email: @Model.Email</div>
+<div>
+    <form method="post" action="">
+        <label for="threadInvite">Invite me:</label>
+        <input type="text" id="threadInvite" name="threadInvite" placeholder="Link to Thread"/>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+<div>
+    <button type="submit" value="/Author/Update/">UPDATE</button>
+    <button type="submit" value="/Author/Delete/">DELETE</button>
+</div>
+<!--List of thread that they have started-->
+<h2>Threads Started:</h2>
+<div class="threads">
+    <!--Needs title, date created, and status-->
+</div>

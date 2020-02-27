@@ -34,7 +34,7 @@ namespace WritingForum.Controllers
             return View(Thread);
         }
 
-        [System.Web.Mvc.HttpPost]
+        [HttpPost]
         //only Title from Threads is needed for adding a new thread, and username from authors, but the rest are still needed for the database
         public ActionResult Add(string Title, DateTime Date, string Status, int AuthorID)
         {
@@ -57,7 +57,7 @@ namespace WritingForum.Controllers
         }
 
         //status is only available on update screen
-        public System.Web.Mvc.ActionResult Update(int id)
+        public ActionResult Update(int id)
         {
             Thread selectedThread = db.Threads.SqlQuery("Select * from threads where threadID = @id", new SqlParameter("@id", id)).FirstOrDefault();
             List<Author> Author = db.Authors.SqlQuery("Select * from authors").ToList();
@@ -69,7 +69,7 @@ namespace WritingForum.Controllers
             return View(UpdateThreadViewModel);
         }
 
-        public System.Web.Mvc.ActionResult Update(int id, string Title, DateTime Date, string Status, int AuthorID)
+        public ActionResult Update(int id, string Title, DateTime Date, string Status, int AuthorID)
         {
             string query = "update threads set Title=@ThreadTitle, AuthorID=@AuthorID, Status=@ThreadStatus, Date=@ThreadDate, where ThreadID=@id";
             SqlParameter[] sqlparams = new SqlParameter[5];

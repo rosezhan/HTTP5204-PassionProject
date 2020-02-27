@@ -237,6 +237,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ThreadController.cs" />
     <Compile Include="Global.asax.cs">
@@ -390,6 +391,7 @@
     <Content Include="Views\Thread\New.cshtml" />
     <Content Include="Views\Thread\Update.cshtml" />
     <Content Include="Views\Thread\Delete.cshtml" />
+    <Content Include="Views\Author\Profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
